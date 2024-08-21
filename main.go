@@ -9,13 +9,20 @@ import (
 )
 
 func main() {
-	fmt.Println("hello world")
 
-	godotenv.Load()
+	godotenv.Load(".env")
  
-	portString := os.Getenv("PORT")
-	if portString == "" {
+	port := os.Getenv("PORT")
+	if port == "" {
 		log.Fatal("PORT is not found in the environment")
 	}
-	fmt.Println("Port:", portString)
+	
+	router := chi.NewRouter()
+
+	srv :=&http.Server{
+		Handler: router,
+		Addr:  ":"+ portString,
+	}
+
+	fmt.Println("PORT:", portString)
 }
