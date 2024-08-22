@@ -26,7 +26,7 @@ func main() {
 		AllowedMethods: []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"},
 		AllowedHeaders: []string{"*"},
 		ExposedHeaders: []string{"Link"},
-		AllowedCredentials: false,
+		AllowCredentials: false,
 		MaxAge:         300,
 	}))
 
