@@ -37,6 +37,10 @@ func main() {
 		log.Fatal("Can`t connect to database:", err)
 	}
 
+	apiCfg := apiConfig{
+		DB: database.New(conn),
+	}
+
 	router := chi.NewRouter()
 
 	router.Use(cors.Handler(cors.Options {
