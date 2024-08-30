@@ -24,6 +24,11 @@ func main() {
 		log.Fatal("PORT is not found in the environment")
 	}
 
+	dbURL := os.Getenv("DB_URL")
+	if dbURL == "" {
+		log.Fatal("DB_URL is not found in the environment")
+	}
+
 	router := chi.NewRouter()
 
 	router.Use(cors.Handler(cors.Options {
