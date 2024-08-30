@@ -1,12 +1,13 @@
 package main
 
 import (
+	"RSS-feed-aggregator/internal/database"
 	"log"
 	"net/http"
 	"os"
-     
-	"github.com/go-chi/cors"
+
 	"github.com/go-chi/chi"
+	"github.com/go-chi/cors"
 	"github.com/joho/godotenv"
 )
 
