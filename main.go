@@ -11,7 +11,6 @@ import (
 	"github.com/go-chi/cors"
 	"github.com/joho/godotenv"
 
-	_"github.com/lib/pg"
 )
 
 type apiConfig struct {
