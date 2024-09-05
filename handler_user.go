@@ -6,6 +6,9 @@ import (
 	"fmt"
 	"net/http"
 	"time"
+
+	"github.com/google/uuid"
+	
 )
 
 func (apiCfg *apiConfig)handlerCreateUser(w http.ResponseWriter, r *http.Request) {
@@ -22,7 +25,7 @@ func (apiCfg *apiConfig)handlerCreateUser(w http.ResponseWriter, r *http.Request
 	}
 
 	user, err := apiCfg.DB.CreateUser(r.Context(), database.CreateUserParams{
-		ID:        uuid.New{},
+		ID:        uuid.New(),
 		CreatedAt: time.Now().UTC(),
 		UpdatedAt: time.Now().UTC(),
 		Name:      params.Name,
